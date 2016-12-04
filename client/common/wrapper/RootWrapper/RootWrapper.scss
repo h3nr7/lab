@@ -1,0 +1,26 @@
+@import 'style/_colors.scss';
+
+.rootwrapper {
+
+  &__mediahelper {
+    display: block;
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__container {
+    display: block;
+    position: relative;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}
