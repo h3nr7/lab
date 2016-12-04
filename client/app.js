@@ -15,9 +15,7 @@ import RootWrapper                from 'wrapper/RootWrapper'
 const rootRoutes = {
   path: '/',
   indexRoute: { onEnter: (nextState, replace) => {
-    // const curday = Number(Moment().date()) - 1
-    const curday = 0
-    replace(`/day/${curday}`)
+    replace(`/index`)
   }},
   component: RootWrapper,
   childRoutes: combineRoutes

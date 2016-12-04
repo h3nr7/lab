@@ -35,3 +35,13 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
+
+#ignore hotupdates
+*.hot-update.json
+*.hot-update.js
+*.hot-update.js.map
+
+# custom excludes
+build
+public
+.env

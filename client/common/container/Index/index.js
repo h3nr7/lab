@@ -1,4 +1,6 @@
 import React from 'react'
+import combineRoutes from 'routes'
+import './Index.scss'
 
 export default class Index extends React.Component {
 
@@ -6,10 +8,30 @@ export default class Index extends React.Component {
     super()
   }
 
+  componentWillMount() {
+
+  }
+
+  renderSections() {
+
+    console.log('rrr', combineRoutes)
+
+    return combineRoutes.forEach( c => {
+
+      let outerStyle = {
+        backgroundImage: c.imageSrc,
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover'
+      }
+
+      return <div className="index__container__section" style={outerStyle}></div>
+    })
+  }
+
   render() {
     return (
-      <div classname="index__container">
-
+      <div className="index__container">
+        { this.renderSections() }
       </div>
     )
   }

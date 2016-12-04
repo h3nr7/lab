@@ -9,62 +9,39 @@ export default class Navi extends Component {
   constructor() {
     super()
     this.dayButton = []
-
-    console.log(routes)
   }
 
-  renderDays() {
+  renderCurDay() {
+
+    let output = null
+    let back = null
+    let { pathname } = this.props.location
+
     routes.forEach( d => {
 
-      let no = d.path.replace('/day/', '')
-      let linkOutput = <Link
-        ref = { c => this.dayButton.push(c) }
-        key={'day' + no}
-        to={d.path}
-        className={"navi__day"}>{no}</Link>
+      if(pathname === d.path && d.name !== 'index') {
+        output = <a  className={"navi__day current"}>{d.name}</a>
+        back = <Link className={"navi__day back"} to={`/index`} >back</Link>
+      } else {
+      }
 
-      let divOutput = <a
-        ref = { c => this.dayButton.push(c) }
-        key={'day' + i}
-        className={"navi__day current"}>{d}</a>
-
-      output.push((pathname === toPath) ? divOutput : linkOutput)
-      return <div className="navi__daycontainer"><span className="navi__title">CODEVEMBER_2016</span> {output}</div>
     })
+
+    return (
+      <div className="navi__daycontainer">
+        <span className="navi__title">LAB</span>
+        {output}
+        {back}
+      </div>
+    )
   }
 
-  // renderDays() {
-  //   let output = []
-  //   let range = Number(Moment().date()) - 1
-  //   let { pathname } = this.props.location
-  //
-  //   for(let i = 0; i < range; i++) {
-  //     let d = (i+1)
-  //     let toPath = '/day/' + d
-  //
-  //     let linkOutput = <Link
-  //       ref = { c => this.dayButton.push(c) }
-  //       key={'day' + i}
-  //       to={'/day/' + d}
-  //       className={"navi__day"}>{d}</Link>
-  //
-  //     let divOutput = <a
-  //       ref = { c => this.dayButton.push(c) }
-  //       key={'day' + i}
-  //       className={"navi__day current"}>{d}</a>
-  //
-  //     output.push((pathname === toPath) ? divOutput : linkOutput)
-  //   }
-  //
-  //   return <div className="navi__daycontainer"><span className="navi__title">CODEVEMBER_2016</span> {output}</div>
-  //
-  // }
 
   render() {
     return (
       <div className="navi__container">
         <a className="navi__logo" href='http://monkiki.co'/>
-        { this.renderDays() }
+        { this.renderCurDay() }
       </div>
     )
   }
