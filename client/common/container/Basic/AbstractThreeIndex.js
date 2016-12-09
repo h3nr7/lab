@@ -8,14 +8,14 @@ export default class AbstractThreeDay extends Component {
     this.reset()
   }
 
-  componentWillMount() {
+  componentWillMount(moreState = {}) {
     this.animate = this.animate.bind(this)
     this.onResize = this.onResize.bind(this)
 
-    this.setState({
+    this.setState(Object.assign({
       width: window.innerWidth,
       height: window.innerHeight
-    })
+    }, moreState) )
 
     this.mouse = {
       normX: 0,

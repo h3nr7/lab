@@ -13,6 +13,7 @@ export default class BasicThreeWithCam extends AbstractThreeIndex {
       zoomMax: 1500,
       zoomMin: 500
     }, opts)
+
   }
 
   componentWillMount() {
@@ -36,12 +37,14 @@ export default class BasicThreeWithCam extends AbstractThreeIndex {
     this.gui.close()
   }
 
-  componentDidMount() {
-    super.componentDidMount()
+  componentDidMount(args) {
+    super.componentDidMount(args)
+
     this.gui.domElement.style.position = 'absolute'
     this.gui.domElement.style.top = '2rem'
     this.gui.domElement.style.right = '0px'
     this.container.appendChild(this.gui.domElement)
+
   }
 
   init() {
@@ -174,7 +177,7 @@ export default class BasicThreeWithCam extends AbstractThreeIndex {
   render() {
     return(
       <div ref = { c => { this.container = c }}
-        className="day__container"
+        className="section__container"
         onMouseUp={this.mouseUp}
         onMouseDown={this.mouseDown}
         onWheel={this.mouseWheel}

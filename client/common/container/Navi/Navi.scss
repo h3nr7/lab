@@ -1,6 +1,6 @@
 @import 'style/_colors.scss';
+@import 'style/_common.scss';
 
-$naviFontSize: 0.95rem;
 
 .navi {
 
@@ -10,7 +10,7 @@ $naviFontSize: 0.95rem;
     left: 0;
     top: 0;
     width: 100%;
-    height: 2rem;
+    height: $naviHeight;
     border: 0;
     margin: 0;
     padding: 0;
@@ -22,10 +22,10 @@ $naviFontSize: 0.95rem;
   &__logo {
     display: block;
     position: absolute;
-    left: 0.5rem;
-    top: 0.25rem;
+    left: 2 * $naviPadding;
+    top: $naviPadding;
     width: 1.5rem;
-    height: 1.5rem;
+    height: $naviHeight - 2 * $naviPadding;
     background-image: url('/public/svg/logo.svg');
     image-rendering: pixelated;
   }
@@ -33,7 +33,7 @@ $naviFontSize: 0.95rem;
   &__daycontainer {
     display: block;
     position: relative;
-    height: 1.5rem;
+    height: $naviHeight - 2 * $naviPadding;
     margin-top: 0.5rem;
     margin-left: 3rem;
     width: auto;

@@ -1,6 +1,8 @@
 import React from 'react'
 import combineRoutes from 'routes'
+import { Link } from 'react-router'
 import './Index.scss'
+
 
 export default class Index extends React.Component {
 
@@ -14,9 +16,7 @@ export default class Index extends React.Component {
 
   renderSections() {
 
-    console.log('rrr', combineRoutes)
-
-    return combineRoutes.forEach( c => {
+    return combineRoutes.map( c => {
 
       let outerStyle = {
         backgroundImage: c.imageSrc,
@@ -24,7 +24,15 @@ export default class Index extends React.Component {
         backgroundSize: 'cover'
       }
 
-      return <div className="index__container__section" style={outerStyle}></div>
+      let outLink = <Link
+          key={ c.name }
+          className="index__container__section"
+          to={`${c.path}`}
+          style={outerStyle}>
+            <span className="index__container__section__overlay">{c.name}</span>
+        </Link>
+
+      return c.name === 'index' ? null : outLink
     })
   }
 
