@@ -1,3 +1,4 @@
+import React from 'react'
 import AbstractThreeIndex from './AbstractThreeIndex'
 import { DirectionalLight, Vector2 } from 'three'
 const PI_HALF = Math.PI / 2

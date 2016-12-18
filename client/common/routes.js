@@ -2,7 +2,7 @@ import urljoin from 'url-join'
 
 import Index from 'container/Index'
 import FollowFace from 'container/FollowFace'
-
+import XmasTree from 'container/XmasTree'
 
 
 const outDayRoutes = () => {
@@ -11,7 +11,9 @@ const outDayRoutes = () => {
 
   let container = [
     { name: 'index',       image: null , obj: Index  },
-    { name: 'follow face', image: null,  obj: FollowFace, url: '/sketch/followface' }
+    { name: 'follow face', image: null,  obj: FollowFace, url: '/2016/sketch/followface' },
+    { name: 'xmas tree', image: null, obj: XmasTree, url:'/2016/sketch/xmas' }
+
   ]
 
   container.forEach( c => {
