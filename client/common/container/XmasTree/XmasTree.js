@@ -1,4 +1,5 @@
 import React from 'react'
+import * as THREE from 'three'
 import {Star} from 'MonkiThree/shape'
 import { BasicThreeWithCam } from 'container/Basic'
 
@@ -12,7 +13,14 @@ export default class XmasTree extends BasicThreeWithCam {
   init() {
     super.init()
     console.log('lala')
-    new Star()
+    let star = new Star({
+      innerRadius: 50,
+      outerRadius: 100,
+      height: 20
+    })
+
+    this.scene.add( star )
+    console.log(this.scene)
   }
 
   tick() {
