@@ -7,20 +7,24 @@ import { BasicThreeWithCam } from 'container/Basic'
 export default class XmasTree extends BasicThreeWithCam {
 
   constructor() {
-    super()
+    super({ hasLight: true })
   }
 
   init() {
     super.init()
-    console.log('lala')
-    let star = new Star({
+
+    this.star = new Star({
       innerRadius: 50,
-      outerRadius: 100,
-      height: 20
+      outerRadius: 80,
+      noPoints: 5,
+      padding: 20,
+      height: 30,
+      material: new THREE.MeshPhongMaterial({ color: 0xffff00 })
     })
 
-    this.scene.add( star )
-    console.log(this.scene)
+    this.scene.add( this.star )
+    this.gui.add(this.star.material, 'wireframe')
+
   }
 
   tick() {
