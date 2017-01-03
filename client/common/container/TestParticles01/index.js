@@ -1,28 +1,3 @@
-import BasicThreeWithCam from 'container/Basic/BasicThreeWithCam'
-import React from 'react'
+import TestParticles01 from './TestParticles01'
 
-
-export default class TestParticles01 extends BasicThreeWithCam {
-
-  constructor() {
-    super({
-      hasLight: true,
-      zoomMax: 4000
-     })
-  }
-
-  
-
-  render() {
-    return(
-      <div ref = { c => { this.container = c }}
-        className="section__container"
-        onMouseUp={this.mouseUp}
-        onMouseDown={this.mouseDown}
-        onWheel={this.mouseWheel}
-        onMouseOut={this.mouseUp}
-        onMouseMove={this.mouseMove}>
-      </div>
-    )
-  }
-}
+export default TestParticles01

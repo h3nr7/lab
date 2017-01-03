@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import * as THREE from 'three'
 
-export default class AbstractThreeDay extends Component {
+export default class AbstractThreeIndex extends Component {
 
   constructor() {
     super()
